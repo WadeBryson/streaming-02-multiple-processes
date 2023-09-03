@@ -1,7 +1,64 @@
-In the console, type clear and hit Enter or Return. 
+Task_Duration is 0.
 
-This will clear the console output. 
+PS C:\Users\wadej\OneDrive\Documents\streaming-02-multiple-processes> & C:/Users/wadej/AppData/Local/Programs/Python/Python311/python.exe c:/Users/wadej/OneDrive/Documents/streaming-02-multiple-processes/multiple_processes.py
+2023-09-03 07:35:42,765 - INFO - 
+======================================================================
+STARTING UP.............................
+  Date and Time:    2023-09-03 at 07:35 AM
+  Operating System: nt Windows 10
+  Python Version:   3.11.3
+  Path to Interpreter:  C:\Users\wadej\AppData\Local\Programs\Python\Python311\python.exe
+======================================================================
 
-Run the file once while the tasks are short. 
+2023-09-03 07:35:42,766 - INFO - Called recreate_database().
+2023-09-03 07:35:42,766 - INFO - Called drop_table().
+2023-09-03 07:35:42,778 - INFO - Table 'pets' dropped successfully.
+2023-09-03 07:35:42,778 - INFO - Called create_table().
+2023-09-03 07:35:42,783 - INFO - Table 'pets' created successfully.
+2023-09-03 07:35:42,921 - INFO - Called process_three().
+2023-09-03 07:35:42,921 - INFO - Called process_two().
+2023-09-03 07:35:42,921 - INFO -   Called insert_pet() with process=P3, name=Emma, breed=Rabbit.
+2023-09-03 07:35:42,921 - INFO - Called process_one().
+2023-09-03 07:35:42,921 - INFO -   Called insert_pet() with process=P2, name=Cooper, breed=Rabbit.
+2023-09-03 07:35:42,922 - INFO -   Called insert_pet() with process=P1, name=Ace, breed=Dog.
+2023-09-03 07:35:45,927 - INFO -   Called insert_pet() with process=P1, name=Buddy, breed=Dog.
+2023-09-03 07:35:48,565 - ERROR - ERROR while P3 inserting pet Emma: database is locked
+2023-09-03 07:35:48,566 - INFO -   Called insert_pet() with process=P3, name=Felix, breed=Cat.
+2023-09-03 07:35:48,580 - ERROR - ERROR while P2 inserting pet Cooper: database is locked
+2023-09-03 07:35:48,580 - INFO -   Called insert_pet() with process=P2, name=Dingo, breed=Dog.
+PS C:\Users\wadej\OneDrive\Documents\streaming-02-multiple-processes> & C:/Users/wadej/AppData/Local/Programs/Python/Python311/python.exe c:/Users/wadej/OneDrive/Documents/streaming-02-multiple-processes/multiple_processes.py
+2023-09-03 07:37:15,760 - INFO - 
+======================================================================
+STARTING UP.............................
+  Date and Time:    2023-09-03 at 07:37 AM
+  Operating System: nt Windows 10
+  Python Version:   3.11.3
+  Path to Interpreter:  C:\Users\wadej\AppData\Local\Programs\Python\Python311\python.exe
+======================================================================
 
-Copy and paste the terminal results (when task_duration is 0) here.
+2023-09-03 07:37:15,761 - INFO - Called recreate_database().
+2023-09-03 07:37:15,761 - INFO - Called drop_table().
+2023-09-03 07:37:15,765 - INFO - Table 'pets' dropped successfully.
+2023-09-03 07:37:15,766 - INFO - Called create_table().
+2023-09-03 07:37:15,771 - INFO - Table 'pets' created successfully.
+2023-09-03 07:37:15,900 - INFO - Called process_one().
+2023-09-03 07:37:15,901 - INFO -   Called insert_pet() with process=P1, name=Ace, breed=Dog.
+2023-09-03 07:37:15,905 - INFO - Called process_two().
+2023-09-03 07:37:15,905 - INFO -   Called insert_pet() with process=P2, name=Cooper, breed=Rabbit.
+2023-09-03 07:37:15,907 - INFO -   Called insert_pet() with process=P1, name=Buddy, breed=Dog.
+2023-09-03 07:37:15,912 - INFO -   Called insert_pet() with process=P2, name=Dingo, breed=Dog.
+2023-09-03 07:37:15,922 - INFO - Called process_three().
+2023-09-03 07:37:15,922 - INFO -   Called insert_pet() with process=P3, name=Emma, breed=Rabbit.
+2023-09-03 07:37:15,926 - INFO -   Called insert_pet() with process=P3, name=Felix, breed=Cat.
+2023-09-03 07:37:15,957 - INFO - 
+SUCCESS: All processes successfully completed!
+
+Now - increase the task duration (representing
+      the time the task has the database
+      tied up during an insert statement).
+How well do multiple, concurrent processes share a database
+    when each task takes more time?
+How can multiple processes share a resource
+    without interfering with each other?
+
+PS C:\Users\wadej\OneDrive\Documents\streaming-02-multiple-processes> 
